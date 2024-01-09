@@ -9,7 +9,7 @@ pipeline{
 	stage('build the code and sonarqube analysis') {
 		steps{
 		withSonarQubeEnv('sonar'){
-		sh script: '/opt/maven/bin/mvn clean package sonar:sonar'
+		sh script: '/opt/maven/bin/mvn  package sonar:sonar'
 		}
 		}
 	}
