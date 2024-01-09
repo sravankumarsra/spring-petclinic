@@ -8,7 +8,7 @@ pipeline{
 	}
 	stage('build the code') {
 		steps{
-		sh: script: '/opt/maven/mvn package'
+		sh script: '/opt/maven/bin/mvn package'
 		}
 	}
 	stage('Reporting'){
