@@ -8,10 +8,9 @@ pipeline{
 	}
 	stage('build the code and sonarqube analysis') {
 		steps{
-	sh script: '/opt/maven/bin/mvn clean'
-		//withSonarQubeEnv('sonar'){
-		//sh script: '/opt/maven/bin/mvn clean'
-		//}
+		withSonarQubeEnv('sonar'){
+		sh script: '/opt/maven/bin/mvn package sonar:sonar'
+		}
 		}
 	}
 	stage('Archieving and Reporting'){
